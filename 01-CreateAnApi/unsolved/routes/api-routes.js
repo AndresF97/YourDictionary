@@ -7,7 +7,6 @@ module.exports = function(app){
         })
     })
     app.delete("/api/delete/:id",function(req,res){
-        console.log("deleting")
         db.DICTIONARIES.destroy({
             where:{
                 id:req.params.id
