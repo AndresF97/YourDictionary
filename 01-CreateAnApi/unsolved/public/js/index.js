@@ -56,7 +56,7 @@ $(document).on("click","#create",function(event){
     var day = new Date().getDay()
     var month  = new Date().getMonth()
     var year = new Date().getFullYear()
-    var fullDate = year+"-"+day+"-"+year
+    var fullDate = year+"-"+month+"-"+day
     var word= ($("#word").val().trim())
     var meaning = ($("#meaning").val().trim())
     var createdNewWords = {
@@ -71,9 +71,7 @@ $(document).on("click","#create",function(event){
         url:"/api/word",
         data:createdNewWords
     })
-    .then(function(result){
-        console.log(result)
-        console.log("It has loaded")
-        //location.reload()
+    .then(function(){
+        location.reload()
     })
 })
