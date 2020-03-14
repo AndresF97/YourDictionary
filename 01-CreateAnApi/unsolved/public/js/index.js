@@ -50,5 +50,30 @@ $(document).on("click","#updateBtn",function(event){
     console.log($("form").attr("data-word"))
     $("form").find($("textarea").prop("readonly",false))
     }
-
+})
+$(document).on("click","#create",function(event){
+    event.preventDefault()
+    var day = new Date().getDay()
+    var month  = new Date().getMonth()
+    var year = new Date().getFullYear()
+    var fullDate = year+"-"+day+"-"+year
+    var word= ($("#word").val().trim())
+    var meaning = ($("#meaning").val().trim())
+    var createdNewWords = {
+        WORD:word,
+        MEANING:meaning,
+        createdAt:fullDate,
+        updatedAt:fullDate
+    }
+    console.log(createdNewWords)
+    $.ajax({
+        type:"PUT",
+        url:"/api/word",
+        data:createdNewWords
+    })
+    .then(function(result){
+        console.log(result)
+        console.log("It has loaded")
+        //location.reload()
+    })
 })
