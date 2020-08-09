@@ -1,3 +1,4 @@
+//this would let the 
 $('.alert').alert("close") 
 
 function getWords(){
@@ -11,9 +12,9 @@ function getWords(){
         words.push(result[i])
         $("#wordsContainer").append(`
         <form data-word="${result[i].id}">
-        <div class="rounded border border-primary m-4">
+        <div class="rounded border border-dark m-4">
             <div class="m-3">
-                <h3>${(result[i].WORD).toUpperCase()}:</h3>
+                <h3><strong>${(result[i].WORD).toUpperCase()}</strong>:</h3>
                 <textarea readonly>
                     ${result[i].MEANING}
                 </textarea>

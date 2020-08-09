@@ -2,6 +2,9 @@ textarea{
     width:900px;
     height: 100px;
     resize: none;
-    border: none;
-    
+    border: none;  
+    background-color:#d6ceba 
+}
+body{
+    background-color:#d6ceba
 }
